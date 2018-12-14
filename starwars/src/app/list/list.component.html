@@ -1,0 +1,41 @@
+<div class=" uk-flex uk-flex-center uk-flex-column uk-padding">
+  <h2>Lista de Personajes</h2>
+  <ng-template  #customLoadingTemplate>
+        <div class="custom-class"> 
+            <h3>
+                Cargando...
+            </h3>
+        </div>
+    </ng-template>
+ 
+    <ngx-loading  [show] = "load"  [config] = "{backdropBorderRadius: '3px'}"  [template] = "customLoadingTemplate"> </ngx-loading>
+  <table class="uk-table uk-table-divider">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Estatura</th>
+        <th>Peso</th>
+        <th>Genero</th>
+        <th>Año de Nacimiento</th>
+        <th>Color de ojos</th>
+        <th>Color de cabello</th>
+        <th>Color de piel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personaje of personajes | paginate: { itemsPerPage: 10, currentPage: indexPage }">
+        <td>{{personaje.name}}</td>
+        <td>{{personaje.height}}</td>
+        <td>{{personaje.mass}}</td>
+        <td>{{personaje.gender}}</td>
+        <td>{{personaje.birth_year}}</td>
+        <td>{{personaje.eye_color}}</td>
+        <td>{{personaje.hair_color}}</td>
+        <td>{{personaje.skin_color}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="uk-padding">
+      <pagination-controls (pageChange)="indexPage = $event"></pagination-controls>
+  </div>
+</div>

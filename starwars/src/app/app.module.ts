@@ -1,11 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
-import { ListComponent } from './components/list/list.component';
-import { ShowComponent } from './components/show/show.component';
+import { ListComponent } from './list/list.component';
+import { ShowComponent } from './show/show.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { FindComponent } from './components/find/find.component';
+import { FindComponent } from './find/find.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,12 @@ import { FindComponent } from './components/find/find.component';
     FindComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxPaginationModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgxLoadingModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
