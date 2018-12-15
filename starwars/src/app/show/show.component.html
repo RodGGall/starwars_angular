@@ -8,16 +8,33 @@
       </div>
   </ng-template>
   <ngx-loading  [show] = "load"  [config] = "{backdropBorderRadius: '3px'}"  [template] = "customLoadingTemplate"> </ngx-loading>
-  <dl class="uk-description-list uk-description-list-divider" *ngIf="personaje !== undefined">
-      <dt>Nombre</dt>
-      <dd>{{personaje.name}}</dd>
-      <dt>Altura(cm)</dt>
-      <dd>{{personaje.height}}</dd>
-      <dt>Peso (Kg)</dt>
-      <dd>{{personaje.mass}}</dd>
-      <dt>Color de Piel</dt>
-      <dd>{{personaje.skin_color}}</dd>
-      <dt>Color de ojos</dt>
-      <dd>{{personaje.eye_color}}</dd>
-  </dl>
+  <div uk-grid>
+      <div class="uk-width-1-2">
+            <dl class="uk-description-list uk-description-list-divider" *ngIf="personaje !== undefined">
+                    <dt>Nombre</dt>
+                    <dd>{{personaje.name}}</dd>
+                    <dt>Altura(cm)</dt>
+                    <dd>{{personaje.height}}</dd>
+                    <dt>Peso (Kg)</dt>
+                    <dd>{{personaje.mass}}</dd>
+                    <dt>Color de Piel</dt>
+                    <dd>{{personaje.skin_color}}</dd>
+                    <dt>Color de ojos</dt>
+                    <dd>{{personaje.eye_color}}</dd>
+                </dl>
+      </div>
+      <div class="uk-width-1-2">
+            <dl class="uk-description-list uk-description-list-divider" *ngIf="personaje !== undefined">
+                    <dt>Planeta</dt>
+                    <dd>{{personaje.homeworld}}</dd>
+                    <dt>Especie Principal</dt>
+                    <dd>{{personaje.species.name}}</dd>
+                    <dt>Vehiculo Principal</dt>
+                    <dd>{{personaje.vehicles.name}}</dd>
+                    <dt>Nave Principal</dt>
+                    <dd>{{personaje.starships.name}}</dd>
+                </dl>
+      </div>
+  </div>
+  
 </div>

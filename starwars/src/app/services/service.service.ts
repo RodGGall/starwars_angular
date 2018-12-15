@@ -28,23 +28,38 @@ const httpOptions = {
         );
     }
 
+    getPlanetas(page?: number): Observable<any> {
+      let url;
+      if (page) {
+        url = environment.url + `planets/?page=${page}`;
+      } else {
+        url = environment.url + `planets`;
+      }
+        return this.http.get(url).pipe(
+          catchError(this.handleError<any>('getPlanetas'))
+        );
+    }
+
     getPersonaje(nombre: string): Observable<any> {
         const url = environment.url + `people/?search=${nombre}`;
         return this.http.get(url).pipe(
           catchError(this.handleError<any>('getPersonaje'))
         );
     }
+
     getPersonajeById(id: number): Observable<any> {
       const url = environment.url + `people/${id}`;
       return this.http.get(url).pipe(
         catchError(this.handleError<any>('getPersonaje'))
       );
   }
-  getPlanet(url: string): Observable<any> {
+
+  getVarios(url: string): Observable<any> {
     return this.http.get(url).pipe(
-      catchError(this.handleError<any>('getPersonaje'))
+      catchError(this.handleError<any>('getVarios'))
     );
   }
+
     private handleError<T>(operation = 'operation', result?: T) {
 
       return (error: any): Observable<T> => {

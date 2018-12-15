@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxLoadingModule } from 'ngx-loading';
+import { ResidentComponent } from './resident/resident.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NgxLoadingModule } from 'ngx-loading';
     ListComponent,
     ShowComponent,
     MenuComponent,
-    FindComponent
+    FindComponent,
+    ResidentComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
