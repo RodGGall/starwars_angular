@@ -14,7 +14,6 @@ export class FindComponent implements OnInit {
   nombre: string;
   @ViewChild(ShowComponent) show: ShowComponent;
   ngOnInit() {
-    console.log(this.show);
   }
 
   search() {
@@ -35,6 +34,5 @@ export class FindComponent implements OnInit {
         this.show.personaje.starships = nave;
       });
     });
-    this.show.load = true;
   }
 }

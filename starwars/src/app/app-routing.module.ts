@@ -8,11 +8,11 @@ import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-    { path: 'personajes', component: ListComponent },
-    { path: 'residentes', component: ResidentComponent },
-    { path: 'buscar', component: FindComponent },
-    { path: 'personaje', component: ShowComponent },
-  ];
+  { path: 'personajes', component: ListComponent },
+  { path: 'residentes', component: ResidentComponent },
+  { path: 'buscar', component: FindComponent },
+  { path: 'personaje', component: ShowComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
